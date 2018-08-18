@@ -21,16 +21,26 @@
 }
 
 a {
+	text-decoration: none;
+}
+
+a .navigation-item {
 	color: white;
 	height: 5rem;
 	line-height: 5rem;
-	text-decoration: none;
 	padding: 0 1rem;
+	text-align: center;
+	min-width: 7rem;
 }
 
-a.active {
+a.active .navigation-item {
 	color: black;
-	background-color: white;
+	background-color: #F1F1F1;
+}
+
+.navigation-item {
+	display: inline-block;
+	height: 100%;
 }
 
 @keyframes App-logo-spin {
