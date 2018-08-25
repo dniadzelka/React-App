@@ -45,6 +45,11 @@ class Dashboard extends Component {
 		});
 	};
 
+	submitApply = (event) => {
+		event.preventDefault();
+		this.apply();
+	};
+
 	render() {
 		const noDataFound = !this.state.loading && !this.state.items.length ? 'No data found' : '';
 		const listItems = this.state.items.map((item) => {
@@ -56,7 +61,7 @@ class Dashboard extends Component {
 				<Loading loading={this.state.loading}></Loading>
 
 				<div className="input-field">
-					<form onSubmit={this.apply}>
+					<form onSubmit={this.submitApply}>
 						<label htmlFor="searchField">Search</label>
 						<input id="searchField" type="text" value={this.state.inputValue} onChange={this.updateInputValue}/>
 					</form>

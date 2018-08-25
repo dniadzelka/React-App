@@ -8,3 +8,10 @@
 	flex-direction: column;
 	max-width: 20rem;
 }
+
+img {
+	width: 25%;
+	height: auto;
+	max-height: 50vh;
+	vertical-align: middle;
+}
