@@ -17,7 +17,9 @@
 		"window": true,
 		"navigator": true,
 		"console": true,
-		"fetch": true
+		"fetch": true,
+		"describe": true,
+		"expect": true
 	},
 	"extends": [
 		"eslint:recommended",

@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {BrowserRouter, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import './Header.css';
 

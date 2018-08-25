@@ -2,3 +2,9 @@
 	font-size: 2rem;
 	font-weight: bold;
 }
+
+.input-field {
+	display: flex;
+	flex-direction: column;
+	max-width: 20rem;
+}
