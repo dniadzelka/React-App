@@ -1,13 +1,19 @@
 import React, {Component} from 'react';
 import './Dashboard.css';
+import Loading from "../../components/loading/Loading";
 
 class Dashboard extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { inputValue: '', items: [] };
+		this.state = {
+			items: [],
+			loading: false,
+			inputValue: ''
+		};
 	}
 
 	apply = () => {
+		this.loading(true);
 		fetch('https://api.giphy.com/v1/gifs/search?api_key=ezgeQFp8RBCfqenZQS6nu7StZyRGvffd&q=SEARCH_TEXT&limit=25&offset=0&rating=G&lang=en')
 			.then((response) => {
 				return response.json();
@@ -21,8 +27,14 @@ class Dashboard extends Component {
 				console.error(error);
 			})
 			.finally(() => {
-				console.log('finish loading');
+				this.loading(false);
 			});
+	};
+
+	loading = (isLoading) => {
+		this.setState({
+			loading: isLoading
+		});
 	};
 
 	updateInputValue = (event) => {
@@ -38,6 +50,8 @@ class Dashboard extends Component {
 
 		return (
 			<div className="Dashboard">
+				<Loading loading={this.state.loading}></Loading>
+
 				<div className="input-field">
 					<form onSubmit={this.apply}>
 						<label htmlFor="searchField">Search</label>
