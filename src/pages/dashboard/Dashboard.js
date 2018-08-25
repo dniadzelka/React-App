@@ -7,14 +7,16 @@ class Dashboard extends Component {
 		super(props);
 		this.state = {
 			items: [],
-			loading: false,
-			inputValue: ''
+			loading: true,
+			inputValue: 'Hello world'
 		};
+
+		this.apply();
 	}
 
 	apply = () => {
 		this.loading(true);
-		fetch('https://api.giphy.com/v1/gifs/search?api_key=ezgeQFp8RBCfqenZQS6nu7StZyRGvffd&q=SEARCH_TEXT&limit=25&offset=0&rating=G&lang=en')
+		fetch(`https://api.giphy.com/v1/gifs/search?api_key=ezgeQFp8RBCfqenZQS6nu7StZyRGvffd&q=${this.state.inputValue}&limit=25&offset=0&rating=G&lang=en`)
 			.then((response) => {
 				return response.json();
 			})
@@ -44,6 +46,7 @@ class Dashboard extends Component {
 	};
 
 	render() {
+		const noDataFound = !this.state.loading && !this.state.items.length ? 'No data found' : '';
 		const listItems = this.state.items.map((item) => {
 			return <img key={item.id} src={item.images.preview_gif.url} alt="picture"/>;
 		});
@@ -64,6 +67,7 @@ class Dashboard extends Component {
 				<br/>
 
 				{listItems}
+				{noDataFound}
 			</div>
 		);
 	}
