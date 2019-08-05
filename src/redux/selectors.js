@@ -1,0 +1,1 @@
+export const getSearchValue = store => store.searchText;
