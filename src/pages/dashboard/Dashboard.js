@@ -5,6 +5,8 @@ import { setSearchText } from '../../redux/actions';
 import { connect } from 'react-redux';
 import { getSearchValue } from '../../redux/selectors';
 import { PropTypes } from 'prop-types';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -78,17 +80,19 @@ class Dashboard extends Component {
 
                 <div className="input-field">
                     <form onSubmit={this.submitApply}>
-                        <label htmlFor="searchField">Search</label>
-                        <input
+                        <TextField
                             id="searchField"
-                            type="text"
+                            label="Search"
                             value={this.props.inputValue}
                             onChange={this.updateInputValue}
+                            margin="normal"
                         />
                     </form>
-                </div>
 
-                <button onClick={this.apply}>Apply</button>
+                    <Button variant="outlined" color="primary">
+                        Apply
+                    </Button>
+                </div>
 
                 <br />
 
