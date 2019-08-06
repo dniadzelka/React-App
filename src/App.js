@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import './App.css';
+import './App.scss';
 import AppRouter from './appRouter/AppRouter';
 import Header from './components/header/Header';
 import { BrowserRouter } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Dashboard.css';
+import './Dashboard.scss';
 import Loading from '../../components/loading/Loading';
 import { setSearchText } from '../../redux/actions';
 import { connect } from 'react-redux';

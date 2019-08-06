@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
-import './Loading.css';
+import './Loading.scss';
 
 const propTypes = {
 	loading: PropTypes.bool.isRequired
