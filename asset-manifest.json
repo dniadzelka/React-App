@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/dniadzelka/react-app/static/css/main.118f3df2.chunk.css",
-    "main.js": "/dniadzelka/react-app/static/js/main.466dcd03.chunk.js",
-    "main.js.map": "/dniadzelka/react-app/static/js/main.466dcd03.chunk.js.map",
-    "runtime~main.js": "/dniadzelka/react-app/static/js/runtime~main.d92d314b.js",
-    "runtime~main.js.map": "/dniadzelka/react-app/static/js/runtime~main.d92d314b.js.map",
-    "static/js/2.fc198867.chunk.js": "/dniadzelka/react-app/static/js/2.fc198867.chunk.js",
-    "static/js/2.fc198867.chunk.js.map": "/dniadzelka/react-app/static/js/2.fc198867.chunk.js.map",
-    "index.html": "/dniadzelka/react-app/index.html",
-    "precache-manifest.d44ed3396f36fab7103df1f1a5d35490.js": "/dniadzelka/react-app/precache-manifest.d44ed3396f36fab7103df1f1a5d35490.js",
-    "service-worker.js": "/dniadzelka/react-app/service-worker.js",
-    "static/css/main.118f3df2.chunk.css.map": "/dniadzelka/react-app/static/css/main.118f3df2.chunk.css.map",
-    "static/media/logo.svg": "/dniadzelka/react-app/static/media/logo.ee7cd8ed.svg"
+    "main.css": "/dniadzelka/react-app/gh-pages/static/css/main.118f3df2.chunk.css",
+    "main.js": "/dniadzelka/react-app/gh-pages/static/js/main.775322b2.chunk.js",
+    "main.js.map": "/dniadzelka/react-app/gh-pages/static/js/main.775322b2.chunk.js.map",
+    "runtime~main.js": "/dniadzelka/react-app/gh-pages/static/js/runtime~main.731847cb.js",
+    "runtime~main.js.map": "/dniadzelka/react-app/gh-pages/static/js/runtime~main.731847cb.js.map",
+    "static/js/2.fc198867.chunk.js": "/dniadzelka/react-app/gh-pages/static/js/2.fc198867.chunk.js",
+    "static/js/2.fc198867.chunk.js.map": "/dniadzelka/react-app/gh-pages/static/js/2.fc198867.chunk.js.map",
+    "index.html": "/dniadzelka/react-app/gh-pages/index.html",
+    "precache-manifest.51ec4a3a5cd8b03c1b3a0540b4555b85.js": "/dniadzelka/react-app/gh-pages/precache-manifest.51ec4a3a5cd8b03c1b3a0540b4555b85.js",
+    "service-worker.js": "/dniadzelka/react-app/gh-pages/service-worker.js",
+    "static/css/main.118f3df2.chunk.css.map": "/dniadzelka/react-app/gh-pages/static/css/main.118f3df2.chunk.css.map",
+    "static/media/logo.svg": "/dniadzelka/react-app/gh-pages/static/media/logo.ee7cd8ed.svg"
   }
 }
