@@ -4,14 +4,14 @@ import Loading from '../../components/loading/Loading';
 import { setSearchText } from '../../redux/actions';
 import { connect } from 'react-redux';
 import { getSearchValue } from '../../redux/selectors';
+import { PropTypes } from 'prop-types';
 
 class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
             items: [],
-            loading: true,
-            inputValue: ''
+            loading: true
         };
     }
 
@@ -23,7 +23,7 @@ class Dashboard extends Component {
         this.loading(true);
         fetch(
             `https://api.giphy.com/v1/gifs/search?api_key=ezgeQFp8RBCfqenZQS6nu7StZyRGvffd&q=${
-                this.state.inputValue
+                this.props.inputValue
             }&limit=25&offset=0&rating=G&lang=en`
         )
             .then(response => {
@@ -82,7 +82,7 @@ class Dashboard extends Component {
                         <input
                             id="searchField"
                             type="text"
-                            value={this.state.inputValue}
+                            value={this.props.inputValue}
                             onChange={this.updateInputValue}
                         />
                     </form>
@@ -99,16 +99,17 @@ class Dashboard extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    // TODO: remove console.log
-    console.log(state);
-    
-    return { inputValue: getSearchValue(state) };
-};
+// must return a plain object, which will be merged into the component’s props;
+const mapStateToProps = state => ({ inputValue: getSearchValue(state) });
 
 const mapDispatchToProps = {
     // ... normally is an object full of action creators
     setSearchText
+};
+
+Dashboard.propTypes = {
+    setSearchText: PropTypes.func.isRequired,
+    inputValue: PropTypes.string.isRequired
 };
 
 export default connect(
