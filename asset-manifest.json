@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/dniadzelka/react-app/gh-pages/static/css/main.118f3df2.chunk.css",
-    "main.js": "/dniadzelka/react-app/gh-pages/static/js/main.775322b2.chunk.js",
-    "main.js.map": "/dniadzelka/react-app/gh-pages/static/js/main.775322b2.chunk.js.map",
-    "runtime~main.js": "/dniadzelka/react-app/gh-pages/static/js/runtime~main.731847cb.js",
-    "runtime~main.js.map": "/dniadzelka/react-app/gh-pages/static/js/runtime~main.731847cb.js.map",
-    "static/js/2.fc198867.chunk.js": "/dniadzelka/react-app/gh-pages/static/js/2.fc198867.chunk.js",
-    "static/js/2.fc198867.chunk.js.map": "/dniadzelka/react-app/gh-pages/static/js/2.fc198867.chunk.js.map",
-    "index.html": "/dniadzelka/react-app/gh-pages/index.html",
-    "precache-manifest.51ec4a3a5cd8b03c1b3a0540b4555b85.js": "/dniadzelka/react-app/gh-pages/precache-manifest.51ec4a3a5cd8b03c1b3a0540b4555b85.js",
-    "service-worker.js": "/dniadzelka/react-app/gh-pages/service-worker.js",
-    "static/css/main.118f3df2.chunk.css.map": "/dniadzelka/react-app/gh-pages/static/css/main.118f3df2.chunk.css.map",
-    "static/media/logo.svg": "/dniadzelka/react-app/gh-pages/static/media/logo.ee7cd8ed.svg"
+    "main.css": "/static/css/main.118f3df2.chunk.css",
+    "main.js": "/static/js/main.d440641e.chunk.js",
+    "main.js.map": "/static/js/main.d440641e.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.fc198867.chunk.js": "/static/js/2.fc198867.chunk.js",
+    "static/js/2.fc198867.chunk.js.map": "/static/js/2.fc198867.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.9eaa6bd2c393c09d29bab82e4e6713c0.js": "/precache-manifest.9eaa6bd2c393c09d29bab82e4e6713c0.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.118f3df2.chunk.css.map": "/static/css/main.118f3df2.chunk.css.map",
+    "static/media/logo.svg": "/static/media/logo.ee7cd8ed.svg"
   }
 }
