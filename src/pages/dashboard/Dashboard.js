@@ -1,20 +1,17 @@
 import React, { Component } from 'react';
 import './Dashboard.scss';
 import Loading from '../../components/loading/Loading';
-import { setSearchText } from '../../redux/actions';
+import { setSearchText, setLoading } from '../../redux/actions';
 import { connect } from 'react-redux';
-import { getSearchValue } from '../../redux/selectors';
+import { getSearchValue, getLoading, getGifItems } from '../../redux/selectors';
 import { PropTypes } from 'prop-types';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { setGifItems } from './../../redux/actions';
 
 class Dashboard extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            items: [],
-            loading: true
-        };
     }
 
     componentDidMount() {
@@ -22,7 +19,7 @@ class Dashboard extends Component {
     }
 
     apply = () => {
-        this.loading(true);
+        this.props.setLoading(true);
         fetch(
             `https://api.giphy.com/v1/gifs/search?api_key=ezgeQFp8RBCfqenZQS6nu7StZyRGvffd&q=${
                 this.props.inputValue
@@ -32,22 +29,14 @@ class Dashboard extends Component {
                 return response.json();
             })
             .then(data => {
-                this.setState({
-                    items: data.data
-                });
+                this.props.setGifItems(data.data);
             })
             .catch(error => {
                 console.error(error);
             })
             .finally(() => {
-                this.loading(false);
+                this.props.setLoading(false);
             });
-    };
-
-    loading = isLoading => {
-        this.setState({
-            loading: isLoading
-        });
     };
 
     updateInputValue = event => {
@@ -61,10 +50,10 @@ class Dashboard extends Component {
 
     render() {
         const noDataFound =
-            !this.state.loading && !this.state.items.length
+            !this.props.loading && !this.props.gifItems.length
                 ? 'No data found'
                 : '';
-        const listItems = this.state.items.map(item => {
+        const listItems = this.props.gifItems.map(item => {
             return (
                 <img
                     key={item.id}
@@ -76,7 +65,7 @@ class Dashboard extends Component {
 
         return (
             <div className="Dashboard">
-                <Loading loading={this.state.loading} />
+                <Loading loading={this.props.loading} />
 
                 <div className="input-field">
                     <form onSubmit={this.submitApply}>
@@ -89,13 +78,18 @@ class Dashboard extends Component {
                         />
                     </form>
 
-                    <Button variant="outlined" color="primary">
+                    <Button
+                        variant="outlined"
+                        onClick={this.apply}
+                        color="primary"
+                    >
                         Apply
                     </Button>
                 </div>
 
                 <br />
 
+                {this.props.loading}
                 {listItems}
                 {noDataFound}
             </div>
@@ -103,17 +97,25 @@ class Dashboard extends Component {
     }
 }
 
-// must return a plain object, which will be merged into the component’s props;
-const mapStateToProps = state => ({ inputValue: getSearchValue(state) });
+const mapStateToProps = state => ({
+    loading: getLoading(state.loadingReducer),
+    gifItems: getGifItems(state.gifItemsReducer),
+    inputValue: getSearchValue(state.searchTextReducer)
+});
 
 const mapDispatchToProps = {
-    // ... normally is an object full of action creators
-    setSearchText
+    setLoading,
+    setSearchText,
+    setGifItems
 };
 
 Dashboard.propTypes = {
+    loading: PropTypes.bool.isRequired,
+    setLoading: PropTypes.func.isRequired,
+    inputValue: PropTypes.string.isRequired,
     setSearchText: PropTypes.func.isRequired,
-    inputValue: PropTypes.string.isRequired
+    gifItems: PropTypes.array.isRequired,
+    setGifItems: PropTypes.func.isRequired
 };
 
 export default connect(

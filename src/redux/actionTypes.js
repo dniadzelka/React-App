@@ -1,4 +1,7 @@
 /*
  * action types
  */
-export const SEARCH_TEXT = 'ADD_TODO'
+
+export const LOADING = 'LOADING';
+export const GIF_ITEMS = 'GIF_ITEMS';
+export const SEARCH_TEXT = 'ADD_TODO';
