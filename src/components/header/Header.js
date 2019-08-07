@@ -1,24 +1,55 @@
-import React, {Component, Fragment} from 'react';
-import {NavLink} from 'react-router-dom';
+import React from 'react';
 import logo from '../../assets/logo.svg';
 import './Header.scss';
+import { Tabs, Tab } from '@material-ui/core';
+import { withRouter } from 'react-router-dom';
 
-class Header extends Component {
-	render() {
-		return (
-			<div className="Header">
-				<Fragment>
-					<header className="app-header">
-						<NavLink to="/dashboard"><div className="navigation-item">Dashboard</div></NavLink>
-						<NavLink to="/settings"><div className="navigation-item">Settings</div></NavLink>
+const Header = withRouter(props => {
+    const getDefaultPathName = () => {
+        const currentPathName = props.location.pathname;
+        const availablePathNames = ['/dashboard', '/settings'];
+        return availablePathNames.indexOf(currentPathName) === -1
+            ? availablePathNames[0]
+            : currentPathName;
+    };
 
-						<img src={logo} className="app-logo" alt="logo"/>
-						<span className="app-title">React App</span>
-					</header>
-				</Fragment>
-			</div>
-		);
-	}
-}
+    const [value, setValue] = React.useState(getDefaultPathName());
+
+    function handleChange(event, newValue) {
+        setValue(newValue);
+        props.history.push(newValue);
+    }
+
+    return (
+        <div className="Header">
+            <header className="app-header">
+                <Tabs
+                    className="tabs"
+                    value={value}
+                    indicatorColor="primary"
+                    textColor="primary"
+                    onChange={handleChange}
+                    aria-label="disabled tabs example"
+                >
+                    <Tab
+                        label="Dashboard"
+                        value="/dashboard"
+                        className="navigation-item"
+                    />
+                    <Tab
+                        label="Settings"
+                        value="/settings"
+                        className="navigation-item"
+                    />
+                </Tabs>
+
+                <div className="logo-wrapper">
+                    <img src={logo} className="app-logo" alt="logo" />
+                    <span className="app-title">React App</span>
+                </div>
+            </header>
+        </div>
+    );
+});
 
 export default Header;

@@ -1,12 +1,12 @@
-import React, { Component, Fragment } from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Dashboard from '../pages/dashboard/Dashboard';
 import Settings from '../pages/settings/Settings';
 
 class AppRouter extends Component {
     render() {
         return (
-            <Fragment>
+            <Switch>
                 <Route
                     exact
                     path="/"
@@ -22,7 +22,7 @@ class AppRouter extends Component {
                     path="/settings"
                     render={props => <Settings {...props} />}
                 />
-            </Fragment>
+            </Switch>
         );
     }
 }

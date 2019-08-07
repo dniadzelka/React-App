@@ -1,53 +1,29 @@
-.Header {
-
-}
+$header-height: 3rem;
 
 .app-header {
-	background-color: #222;
-	height: 5rem;
-	color: white;
+    display: flex;
+    justify-content: space-between;
 }
 
-.app-logo {
-	animation: App-logo-spin infinite 20s linear;
-	height: 5rem;
-	float: right;
-}
+.logo-wrapper {
+	width: 15rem;
 
-.app-title {
-	font-size: 1.5rem;
-	line-height: 5rem;
-	float: right
-}
+    .app-logo {
+		animation: App-logo-spin infinite 20s linear;
+        height: $header-height;
+    }
 
-a {
-	text-decoration: none;
-}
-
-a .navigation-item {
-	color: white;
-	height: 5rem;
-	line-height: 5rem;
-	padding: 0 1rem;
-	text-align: center;
-	min-width: 7rem;
-}
-
-a.active .navigation-item {
-	color: black;
-	background-color: #F1F1F1;
-}
-
-.navigation-item {
-	display: inline-block;
-	height: 100%;
+    .app-title {
+        font-size: 1.5rem;
+        line-height: $header-height;
+    }
 }
 
 @keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

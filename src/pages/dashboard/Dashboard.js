@@ -10,10 +10,6 @@ import Button from '@material-ui/core/Button';
 import { setGifItems } from './../../redux/actions';
 
 class Dashboard extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         this.apply();
     }
