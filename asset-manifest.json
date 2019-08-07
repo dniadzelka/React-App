@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-app/static/css/main.229981ca.chunk.css",
-    "main.js": "/react-app/static/js/main.23eeb80a.chunk.js",
-    "main.js.map": "/react-app/static/js/main.23eeb80a.chunk.js.map",
+    "main.css": "/react-app/static/css/main.ade3860e.chunk.css",
+    "main.js": "/react-app/static/js/main.409fc9c7.chunk.js",
+    "main.js.map": "/react-app/static/js/main.409fc9c7.chunk.js.map",
     "runtime~main.js": "/react-app/static/js/runtime~main.cbc86c42.js",
     "runtime~main.js.map": "/react-app/static/js/runtime~main.cbc86c42.js.map",
-    "static/js/2.da313fee.chunk.js": "/react-app/static/js/2.da313fee.chunk.js",
-    "static/js/2.da313fee.chunk.js.map": "/react-app/static/js/2.da313fee.chunk.js.map",
+    "static/js/2.37a65954.chunk.js": "/react-app/static/js/2.37a65954.chunk.js",
+    "static/js/2.37a65954.chunk.js.map": "/react-app/static/js/2.37a65954.chunk.js.map",
     "index.html": "/react-app/index.html",
-    "precache-manifest.a9ba3dafde8ccad064bc5071ec244795.js": "/react-app/precache-manifest.a9ba3dafde8ccad064bc5071ec244795.js",
+    "precache-manifest.c0e8054fdd4a17be214420731c266c17.js": "/react-app/precache-manifest.c0e8054fdd4a17be214420731c266c17.js",
     "service-worker.js": "/react-app/service-worker.js",
-    "static/css/main.229981ca.chunk.css.map": "/react-app/static/css/main.229981ca.chunk.css.map",
+    "static/css/main.ade3860e.chunk.css.map": "/react-app/static/css/main.ade3860e.chunk.css.map",
     "static/media/logo.svg": "/react-app/static/media/logo.ee7cd8ed.svg"
   }
 }
