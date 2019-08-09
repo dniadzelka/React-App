@@ -6,8 +6,16 @@ import { connect } from 'react-redux';
 import { getSearchValue, getLoading, getGifItems } from '../../redux/selectors';
 import { PropTypes } from 'prop-types';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import { setGifItems } from './../../redux/actions';
+import ImageCard from '../../components/imageCard/ImageCard';
+import {
+    IconButton,
+    InputBase,
+    InputLabel,
+    Input,
+    InputAdornment
+} from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
 
 class Dashboard extends Component {
     componentDidMount() {
@@ -49,42 +57,40 @@ class Dashboard extends Component {
             !this.props.loading && !this.props.gifItems.length
                 ? 'No data found'
                 : '';
-        const listItems = this.props.gifItems.map(item => {
-            return (
-                <img
-                    key={item.id}
-                    src={item.images.preview_gif.url}
-                    alt="pictuire"
-                />
-            );
-        });
+        const listItems = (
+            <div className="list-items-wrapper">
+                {this.props.gifItems.map(item => {
+                    return (
+                        <ImageCard
+                            className="ImageCard"
+                            key={item.id}
+                            item={item}
+                        />
+                    );
+                })}
+            </div>
+        );
 
         return (
             <div className="Dashboard">
                 <Loading loading={this.props.loading} />
 
-                <div className="input-field">
-                    <form onSubmit={this.submitApply}>
-                        <TextField
-                            id="searchField"
-                            label="Search"
-                            value={this.props.inputValue}
-                            onChange={this.updateInputValue}
-                            margin="normal"
-                        />
-                    </form>
-
-                    <Button
-                        variant="outlined"
-                        onClick={this.apply}
-                        color="primary"
-                    >
-                        Apply
-                    </Button>
-                </div>
-
-                <br />
-
+                <form className="search-form" onSubmit={this.submitApply}>
+                    <InputLabel htmlFor="searchField">Search</InputLabel>
+                    <Input
+                        id="searchField"
+                        value={this.props.inputValue}
+                        onChange={this.updateInputValue}
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton onClick={this.apply}>
+                                    <SearchIcon />
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                    />
+                </form>
+                
                 {this.props.loading}
                 {listItems}
                 {noDataFound}

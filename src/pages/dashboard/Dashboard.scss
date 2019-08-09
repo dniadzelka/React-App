@@ -1,18 +1,26 @@
+$gridItemHeight: 10rem;
+$gridItemWidth: 25rem;
+
 .Dashboard {
-	font-size: 2rem;
-	font-weight: bold;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
-.input-field {
-	display: flex;
-	flex-direction: column;
-	max-width: 30rem;
-	margin-left: 2rem;
+.search-form {
+    margin: 1.5rem;
 }
 
-img {
-	width: 25%;
-	height: auto;
-	max-height: 50vh;
+.search-icon-btn {
 	vertical-align: middle;
+}
+
+.list-items-wrapper {
+	display: flex; 
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+    & > div {
+		width: 25rem;
+		margin: 0.25rem auto;
+    }
 }

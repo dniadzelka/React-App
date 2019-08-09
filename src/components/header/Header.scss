@@ -1,4 +1,5 @@
 $header-height: 3rem;
+$header-indent: 1rem;
 
 .app-header {
     display: flex;
@@ -6,15 +7,18 @@ $header-height: 3rem;
 }
 
 .logo-wrapper {
-	width: 15rem;
+    position: relative;
 
     .app-logo {
 		animation: App-logo-spin infinite 20s linear;
         height: $header-height;
+        position: absolute;
+        left: calc(-#{$header-height} - #{$header-indent});
     }
 
     .app-title {
         font-size: 1.5rem;
+        margin-right: $header-indent;
         line-height: $header-height;
     }
 }
